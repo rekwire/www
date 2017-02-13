@@ -623,6 +623,12 @@ body {
 #header #nav ul li:last-child a {
   margin-right: 0;
 }
+#header #title:hover h1:after {
+  content: " _";
+  color: #2bbc8a;
+  font-weight: 700;
+  font-style: bolder;
+}
 #header:hover #logo {
   -webkit-filter: none;
   filter: none;
