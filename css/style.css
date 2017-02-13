@@ -626,8 +626,7 @@ body {
 #header #title:hover h1:after {
   content: " _";
   color: #2bbc8a;
-  font-weight: 700;
-  font-style: bolder;
+  font-weight: bold;
 }
 #header:hover #logo {
   -webkit-filter: none;
