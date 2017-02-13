@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Rekwire</title>
+  <subtitle>Rekwi@re :~$</subtitle>
+  <description>Stuff I&#39;ve Figured Out</description>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://rekwi.re/"/>
+  <updated>2017-02-13T14:07:09.889Z</updated>
+  <id>http://rekwi.re/</id>
+  
+  <author>
+    <name>Rekwire</name>
+    
+  </author>
+  
+  <generator uri="http://rekwi.re/">Rekwire</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://rekwi.re/2017/02/13/hello-world/"/>
+    <id>http://rekwi.re/2017/02/13/hello-world/</id>
+    <published>2017-02-13T14:07:09.925Z</published>
+    <updated>2017-02-13T14:07:09.889Z</updated>
+    
+    <content type="html"><![CDATA[<p>Enjoy your stay.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Enjoy your stay.&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
