@@ -610,7 +610,7 @@ body {
 #header #nav ul li {
   display: inline-block;
   vertical-align: middle;
-  margin-right: 15px;
+  margin-right: 7px;
   border-right: 1px dotted #2bbc8a;
 }
 #header #nav ul .icon {
@@ -682,7 +682,7 @@ body {
   display: inline-block;
 }
 #header-post ul li {
-  margin-right: 15px;
+  margin-right: 7px;
   display: inline-block;
   vertical-align: middle;
 }
