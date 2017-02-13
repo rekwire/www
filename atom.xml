@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://rekwi.re/"/>
-  <updated>2017-02-13T14:07:09.889Z</updated>
+  <updated>2017-02-13T20:08:54.683Z</updated>
   <id>http://rekwi.re/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://rekwi.re/2017/02/13/hello-world/"/>
-    <id>http://rekwi.re/2017/02/13/hello-world/</id>
-    <published>2017-02-13T14:07:09.925Z</published>
-    <updated>2017-02-13T14:07:09.889Z</updated>
+    <link href="http://rekwi.re/8dc98100-f21f-11e6-a1f9-3ff843d5641d/echo-hello-world/"/>
+    <id>http://rekwi.re/8dc98100-f21f-11e6-a1f9-3ff843d5641d/echo-hello-world/</id>
+    <published>2017-02-13T20:08:54.718Z</published>
+    <updated>2017-02-13T20:08:54.683Z</updated>
     
     <content type="html"><![CDATA[<p>Enjoy your stay.</p>
 ]]></content>
@@ -33,6 +33,14 @@
     
     </summary>
     
+      <category term="tmp" scheme="http://rekwi.re/categories/tmp/"/>
+    
+    
+      <category term="2017" scheme="http://rekwi.re/tags/2017/"/>
+    
+      <category term="hello" scheme="http://rekwi.re/tags/hello/"/>
+    
+      <category term="world" scheme="http://rekwi.re/tags/world/"/>
     
   </entry>
   
