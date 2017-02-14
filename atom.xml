@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://rekwi.re/"/>
-  <updated>2017-02-14T15:35:25.428Z</updated>
+  <updated>2017-02-14T15:45:34.121Z</updated>
   <id>http://rekwi.re/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://rekwi.re/d0d99870-f2c1-11e6-a8be-4bc23c036407/0w-25-folder-in-microsoft-outlook-2016/"/>
     <id>http://rekwi.re/d0d99870-f2c1-11e6-a8be-4bc23c036407/0w-25-folder-in-microsoft-outlook-2016/</id>
     <published>2017-02-14T12:28:12.000Z</published>
-    <updated>2017-02-14T15:35:25.428Z</updated>
+    <updated>2017-02-14T15:45:34.121Z</updated>
     
     <content type="html"><![CDATA[<h2 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h2><p>For some time already I noticed the presence of this ghost or <0w#25> folder which is annoying. Fixing it is pretty easy.</0w#25></p>
 <p><img src="/content/images/0w-25-empty-folder-outlook-2016.png" alt="&lt;0w#25&gt; Folder"></p>
@@ -62,9 +62,13 @@
       <category term="tmp" scheme="http://rekwi.re/categories/tmp/"/>
     
     
+      <category term="2017" scheme="http://rekwi.re/tags/2017/"/>
+    
       <category term="Microsoft" scheme="http://rekwi.re/tags/Microsoft/"/>
     
       <category term="Outlook" scheme="http://rekwi.re/tags/Outlook/"/>
+    
+      <category term="Outlook 2016" scheme="http://rekwi.re/tags/Outlook-2016/"/>
     
   </entry>
   
