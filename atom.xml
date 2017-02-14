@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://rekwi.re/"/>
-  <updated>2017-02-13T21:02:45.828Z</updated>
+  <updated>2017-02-14T15:35:25.428Z</updated>
   <id>http://rekwi.re/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="http://rekwi.re/">Rekwire</generator>
+  
+  <entry>
+    <title>&lt;0w#25&gt; folder in Microsoft Outlook 2016</title>
+    <link href="http://rekwi.re/d0d99870-f2c1-11e6-a8be-4bc23c036407/0w-25-folder-in-microsoft-outlook-2016/"/>
+    <id>http://rekwi.re/d0d99870-f2c1-11e6-a8be-4bc23c036407/0w-25-folder-in-microsoft-outlook-2016/</id>
+    <published>2017-02-14T12:28:12.000Z</published>
+    <updated>2017-02-14T15:35:25.428Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h2><p>For some time already I noticed the presence of this ghost or <0w#25> folder which is annoying. Fixing it is pretty easy.</0w#25></p>
+<p><img src="/content/images/0w-25-empty-folder-outlook-2016.png" alt="&lt;0w#25&gt; Folder"></p>
+<h3 id="Issue"><a href="#Issue" class="headerlink" title="Issue"></a>Issue</h3><ul>
+<li><0w#25> / Empty Folder</0w#25></li>
+</ul>
+<h3 id="About-the-System"><a href="#About-the-System" class="headerlink" title="About the System"></a>About the System</h3><ul>
+<li>Microsoft Windows 10 Pro</li>
+<li>Microsoft Outlook 2016</li>
+<li>Gmail Account (IMAP)</li>
+</ul>
+<h3 id="Didn’t-worked"><a href="#Didn’t-worked" class="headerlink" title="Didn’t worked"></a>Didn’t worked</h3><ul>
+<li>Disabling different addons (such as Kaspersky, Teamviewer, OneNote etc)</li>
+<li>Running <code>SCANPST.EXE</code> </li>
+<li>Running Outlook in Safe Mode</li>
+<li>Different freeware solutions</li>
+</ul>
+<h3 id="Worked"><a href="#Worked" class="headerlink" title="Worked"></a>Worked</h3><ul>
+<li>Close Outlook</li>
+<li>Press <code>WIN + R</code></li>
+<li><p>Type or Copy/Paste </p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">%HOMEDRIVE%</span><span class="variable">%HOMEPATH%</span>\AppData\Local\Microsoft\Outlook</div></pre></td></tr></table></figure>
+</li>
+<li><p>Make sure <code>File name extensions</code> is checked<br><img src="/content/images/view-file-name-extensions.png" alt="&lt;0w#25&gt; Folder"></p>
+</li>
+<li>Rename the <code>.ost</code> file in something else (ex. <code>.ost_</code>)</li>
+<li>Open Outlook (it will take longer than usual)</li>
+<li>Repeat the above if you have multiple accounts</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      For some time already I noticed the presence of this ghost or &lt;0w#25&gt; folder which is annoying. Fixing it is pretty easy.
+    
+    </summary>
+    
+      <category term="tmp" scheme="http://rekwi.re/categories/tmp/"/>
+    
+    
+      <category term="Microsoft" scheme="http://rekwi.re/tags/Microsoft/"/>
+    
+      <category term="Outlook" scheme="http://rekwi.re/tags/Outlook/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
