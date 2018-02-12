@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Rekwire</title>
+  
   <subtitle>Rekwi@re :~$</subtitle>
-  <description>Stuff I&#39;ve Figured Out</description>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://rekwi.re/"/>
-  <updated>2017-03-04T17:07:02.912Z</updated>
+  <updated>2018-02-11T21:25:02.650Z</updated>
   <id>http://rekwi.re/</id>
   
   <author>
@@ -14,7 +14,35 @@
     
   </author>
   
-  <generator uri="http://rekwi.re/">Rekwire</generator>
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>cc1plus: error: unrecognized command line option &quot;-std=c++11&quot;</title>
+    <link href="http://rekwi.re/68c22c38-0e80-4680-9d54-bd77fdc880e9/cc1plus-error-unrecognized_command_line_option_-std-c++11/"/>
+    <id>http://rekwi.re/68c22c38-0e80-4680-9d54-bd77fdc880e9/cc1plus-error-unrecognized_command_line_option_-std-c++11/</id>
+    <published>2018-02-11T12:28:12.000Z</published>
+    <updated>2018-02-11T21:25:02.650Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h2><p>Sharing storage (and get paid for) with <a href="https://storj.io" target="_blank" rel="noopener">Storj</a> is pretty easy. As easy as:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash</span><br><span class="line">$ nvm install --lts &amp;&amp; nvm install --lts <span class="comment"># not a typo, run it twice</span></span><br><span class="line">$ <span class="built_in">export</span> NVM_DIR=<span class="string">"/home/storj/.nvm"</span> &amp;&amp; [ -s <span class="string">"<span class="variable">$NVM_DIR</span>/nvm.sh"</span> ] &amp;&amp; \. <span class="string">"<span class="variable">$NVM_DIR</span>/nvm.sh"</span></span><br><span class="line">$ npm install --global storjshare-daemon</span><br></pre></td></tr></table></figure><p>Anyway, with few boxes running Centos 6, installation process failed with <code>cc1plus: error: unrecognized command line option &quot;-std=c++11&quot;</code> error.</p><h2 id="Issue"><a href="#Issue" class="headerlink" title="Issue"></a>Issue</h2><p>Installing <code>storjshare-daemon</code> on Centos/RHEL 6 with stock gcc/g++ will fail with <code>cc1plus: error: unrecognized command line option &quot;-std=c++11&quot;</code>.</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --global storjshare-daemon</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">make: Entering directory `~/.nvm/versions/node/v8.9.4/lib/node_modules/storjshare-daemon/node_modules/diskusage/build<span class="string">'</span></span><br><span class="line"><span class="string">  CXX(target) Release/obj.target/diskusage/src/main.o</span></span><br><span class="line"><span class="string">cc1plus: error: unrecognized command line option "-std=c++11"</span></span><br><span class="line"><span class="string">make: *** [Release/obj.target/diskusage/src/main.o] Error 1</span></span><br><span class="line"><span class="string">make: Leaving directory `~/.nvm/versions/node/v8.9.4/lib/node_modules/storjshare-daemon/node_modules/diskusage/build'</span></span><br><span class="line">gyp ERR! build error</span><br><span class="line">gyp ERR! stack Error: `make` failed with <span class="built_in">exit</span> code: 2</span><br><span class="line">gyp ERR! stack     at ChildProcess.onExit (~/.nvm/versions/node/v8.9.4/lib/node_modules/npm/node_modules/node-gyp/lib/build.js:258:23)</span><br><span class="line">gyp ERR! stack     at emitTwo (events.js:126:13)</span><br><span class="line">gyp ERR! stack     at ChildProcess.emit (events.js:214:7)</span><br><span class="line">gyp ERR! stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:198:12)</span><br><span class="line">gyp ERR! System Linux 2.6.32-573.7.1.el6.x86_64</span><br><span class="line">gyp ERR! <span class="built_in">command</span> <span class="string">"~/.nvm/versions/node/v8.9.4/bin/node"</span> <span class="string">"~/.nvm/versions/node/v8.9.4/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js"</span> <span class="string">"rebuild"</span></span><br><span class="line">gyp ERR! cwd ~/.nvm/versions/node/v8.9.4/lib/node_modules/storjshare-daemon/node_modules/diskusage</span><br><span class="line">gyp ERR! node -v v8.9.4</span><br><span class="line">gyp ERR! node-gyp -v v3.6.2</span><br><span class="line">gyp ERR! not ok</span><br><span class="line">npm ERR! code ELIFECYCLE</span><br><span class="line">npm ERR! errno 1</span><br><span class="line">npm ERR! diskusage@0.2.4 install: `node-gyp rebuild`</span><br><span class="line">npm ERR! Exit status 1</span><br><span class="line">npm ERR!</span><br><span class="line">npm ERR! Failed at the diskusage@0.2.4 install script.</span><br><span class="line">npm ERR! This is probably not a problem with npm. There is likely additional logging output above.</span><br><span class="line"></span><br><span class="line">npm ERR! A complete <span class="built_in">log</span> of this run can be found <span class="keyword">in</span>:</span><br><span class="line">npm ERR!     ~/.npm/_logs/cc4f7e42-50c8-41e1-adb3-193c6704ac27-debug.log</span><br></pre></td></tr></table></figure><h2 id="About-the-System"><a href="#About-the-System" class="headerlink" title="About the System"></a>About the System</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ cat /etc/redhat-release</span><br><span class="line">CentOS release 6.9 (Final)</span><br><span class="line"></span><br><span class="line">$ gcc --version</span><br><span class="line">gcc (GCC) 4.4.7 20120313 (Red Hat 4.4.7-18)</span><br><span class="line"></span><br><span class="line">$ g++ --version</span><br><span class="line">g++ (GCC) 4.4.7 20120313 (Red Hat 4.4.7-18)</span><br></pre></td></tr></table></figure><h2 id="Fix"><a href="#Fix" class="headerlink" title="Fix"></a>Fix</h2><p>Install GCC &gt;= 4.7 in order to have support for <code>-std=c++11</code> and <code>-std=gnu++11</code> as well.</p><h3 id="Centos-RHEL-6"><a href="#Centos-RHEL-6" class="headerlink" title="Centos/RHEL 6"></a>Centos/RHEL 6</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install centos-release-scl</span><br><span class="line">$ sudo yum install devtoolset-3-toolchain</span><br><span class="line">$ scl <span class="built_in">enable</span> devtoolset-3 bash</span><br><span class="line">$ gcc --version</span><br><span class="line">gcc (GCC) 4.9.2 20150212 (Red Hat 4.9.2-6)</span><br><span class="line"></span><br><span class="line">$ g++ --version</span><br><span class="line">g++ (GCC) 4.9.2 20150212 (Red Hat 4.9.2-6)</span><br><span class="line"></span><br><span class="line">$ npm install --global storjshare-daemon <span class="comment"># should work now</span></span><br></pre></td></tr></table></figure><h3 id="Raspbian-Wheezy"><a href="#Raspbian-Wheezy" class="headerlink" title="Raspbian Wheezy"></a>Raspbian Wheezy</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ apt-get install gcc-4.8 g++-4.8</span><br></pre></td></tr></table></figure><p>Happy “farming”.</p>]]></content>
+    
+    <summary type="html">
+    
+      Fix cc1plus: error: unrecognized command line option -std=c++11 error when installing storjdaemon
+    
+    </summary>
+    
+      <category term="/storj" scheme="http://rekwi.re/categories/storj/"/>
+    
+    
+      <category term="Storj" scheme="http://rekwi.re/tags/Storj/"/>
+    
+      <category term="Centos" scheme="http://rekwi.re/tags/Centos/"/>
+    
+      <category term="RHEL" scheme="http://rekwi.re/tags/RHEL/"/>
+    
+      <category term="Raspbian" scheme="http://rekwi.re/tags/Raspbian/"/>
+    
+  </entry>
   
   <entry>
     <title>/home - De la anunt la achizitie (1)</title>
@@ -23,29 +51,7 @@
     <published>2017-02-26T12:55:18.000Z</published>
     <updated>2017-03-04T17:07:02.912Z</updated>
     
-    <content type="html"><![CDATA[<p>Dupa o lunga perioada de timp in care impreuna cu sotia mea am stat cu un ochi pe banci, celalalt pe anunturile imobiliare si doar ea cu gura pe mine, fortati si de anumite imprejurari, am reusit sa achizitionam primul nostru apartament, in Bucuresti.</p>
-<h2 id="TL-DR"><a href="#TL-DR" class="headerlink" title="TL;DR"></a>TL;DR</h2><ol>
-<li>Recomand o vizita formala in sucursala bancii unde iti desfasori activitatea (ai card de salariu etc.);</li>
-<li>Indiferent de raspunsul primit la punctul 1., un Broker de Credite te va ajuta sa iei pulsul celorlalte banci (in functie de contactele acestuia), gratuit;</li>
-<li>Un agent imobiliar profesionist este <strong>prietenul</strong> tau, chiar daca pretul este piperat;</li>
-<li>Mergi de cel putin 2 ori in apartamentul pe care vrei sa-l cumperi inainte de a semna antecontractul/contractul;</li>
-<li>Verifica toate detaliile din anuntul de vanzare pentru a nu te trezi (de regula dupa ce platesti) ca sunt diferente;</li>
-<li>In antecontract mergi pe minim 2 luni pentru finalizarea tranzactiei imobiliare;</li>
-</ol>
-<h2 id="Primul-drum-la-banca"><a href="#Primul-drum-la-banca" class="headerlink" title="Primul drum la banca"></a>Primul drum la banca</h2><p>Aventura a inceput undeva prin Septembrie 2016 cu un drum la <a href="https://www.ing.ro/" target="_blank" rel="external">ING Bank</a>, principala banca cu care lucrez, de unde am plecat cu un OK formal dpdv financiar. Considerand ING destul de riguroasa cand vine vorba de acordare credite, un OK din partea lor a insemnat destul de mult pentru mine.</p>
-<p>In acel moment nu aveam nimic pe lista posibilelor apartamente dar o discutie cu banca m-a ajutat sa inteleg anumite criterii/caracteristici (ale apartamentului) pe care banca nu le va accepta si implicit nu va acorda creditul.</p>
-<h2 id="Broker-de-Credite"><a href="#Broker-de-Credite" class="headerlink" title="Broker de Credite"></a>Broker de Credite</h2><p>Broker-ul m-a ajutat sa accesez intr-un timp scurt si fara prea multe <strong>batai de cap</strong>/<strong>drumuri la banca</strong> ofertele altor cateva banci de pe piata (lucru pe care il va face indiferent daca vei lua un credit prin el sau nu).</p>
-<p>Tot el mi-a explicat in mare sistemul de scoring al bancilor si cum anume ar trebui sa raspund la diferite intrebari atunci cand voi aplica pentru credit. De exemplu daca stai in chirie (fara contract) la banca vei spune ca locuiesti cu parintii :). </p>
-<p>Asadar recomand discutia cu un Broker de Credite.</p>
-<h2 id="Apartamentul-amp-Agentia-Imobiliara"><a href="#Apartamentul-amp-Agentia-Imobiliara" class="headerlink" title="Apartamentul &amp; Agentia Imobiliara"></a>Apartamentul &amp; Agentia Imobiliara</h2><p>Dupa mai multe vizionari, apartamentul castigator a fost cel ofertat de agentia imobiliara <a href="https://www.facebook.com/axadomenii/" target="_blank" rel="external">Axa Domenii International</a>. Experienta cu Axa Domenii a fost una excelenta.</p>
-<p>Din momentul in care am decis achizitionarea apartamentului pot spune ca agentia s-a ocupat de toate (atat pentru noi ca si cumparatori cat si pentru vanzator), inclusiv recomandare de ING Office (o recomandare foarte buna de altfel ce a dus la mutarea tuturor conturilor/operatiunilor in acest office).</p>
-<p>Pe scurt, a fost exact ceea ce ne-am dorit, in seama noastra ramanand doar accesarea creditului. Fara dar si poate un agent imobiliar profesionist te va scuti de multe batai de cap.</p>
-<p>Tot la recomandarea Axa Domenii International am mers la un anumit notar unde lucrurile au mers fara nicio problema. Semnare antecontract in prima faza, cu plata unei sume (parte din avans) proprietarului, stabilirea datei pana la care sa va finaliza tranzactia si a numarului de zile pentru eliberarea apartamentului de la data semnarii. <strong>Un antecontract securizeaza tranzactia!</strong></p>
-<h2 id="Banca"><a href="#Banca" class="headerlink" title="Banca"></a>Banca</h2><p>Cu siguranta interesul tuturor agentiilor imobiliare este sa vanda. Nu pot vorbi despre alte agentii dar in cazul de fata agentia prin care am cumparat apartamentul ne-a recomandat inclusiv in ce ING Office sa mergem. Si nu mi-a parut rau deloc ba din contra, fiind pe picior de plecare din ING (alta discutie), dupa aceasta experienta, recomand cu incredere ING Bank.</p>
-<p>Lucrurile au mers cum nu se puteau mai bine. Practic pentru achizitionarea apartamentului a fost nevoie de un singur drum la banca. In rest, actele necesare finalizarii tranzactiei au fost trimise electronic sau prin curier intre toti cei implicati (noi, banca, agentie/vanzator). Dupa indeplinirea conditiilor semnarea oficiala s-a facut la notar in prezenta reprezentatului ING la o data stabilita de comun acord (agentia s-a ocupat de acest aspect) cu toate partile implicate.</p>
-<p><strong>Simplu si rapid!</strong></p>
-<p>O luna si jumatate a durat intregul proces din momentul in care am luat legatura cu noul office ING pana la finalizarea tranzactiei. Sunt sigur ca ar fi putut dura chiar mai putin avand in vedere ca in acest interval am prins mai multe perioade libere (Craciun, Revelion, Mica Unire).</p>
-]]></content>
+    <content type="html"><![CDATA[<p>Dupa o lunga perioada de timp in care impreuna cu sotia mea am stat cu un ochi pe banci, celalalt pe anunturile imobiliare si doar ea cu gura pe mine, fortati si de anumite imprejurari, am reusit sa achizitionam primul nostru apartament, in Bucuresti.</p><h2 id="TL-DR"><a href="#TL-DR" class="headerlink" title="TL;DR"></a>TL;DR</h2><ol><li>Recomand o vizita formala in sucursala bancii unde iti desfasori activitatea (ai card de salariu etc.);</li><li>Indiferent de raspunsul primit la punctul 1., un Broker de Credite te va ajuta sa iei pulsul celorlalte banci (in functie de contactele acestuia), gratuit;</li><li>Un agent imobiliar profesionist este <strong>prietenul</strong> tau, chiar daca pretul este piperat;</li><li>Mergi de cel putin 2 ori in apartamentul pe care vrei sa-l cumperi inainte de a semna antecontractul/contractul;</li><li>Verifica toate detaliile din anuntul de vanzare pentru a nu te trezi (de regula dupa ce platesti) ca sunt diferente;</li><li>In antecontract mergi pe minim 2 luni pentru finalizarea tranzactiei imobiliare;</li></ol><h2 id="Primul-drum-la-banca"><a href="#Primul-drum-la-banca" class="headerlink" title="Primul drum la banca"></a>Primul drum la banca</h2><p>Aventura a inceput undeva prin Septembrie 2016 cu un drum la <a href="https://www.ing.ro/" target="_blank" rel="noopener">ING Bank</a>, principala banca cu care lucrez, de unde am plecat cu un OK formal dpdv financiar. Considerand ING destul de riguroasa cand vine vorba de acordare credite, un OK din partea lor a insemnat destul de mult pentru mine.</p><p>In acel moment nu aveam nimic pe lista posibilelor apartamente dar o discutie cu banca m-a ajutat sa inteleg anumite criterii/caracteristici (ale apartamentului) pe care banca nu le va accepta si implicit nu va acorda creditul.</p><h2 id="Broker-de-Credite"><a href="#Broker-de-Credite" class="headerlink" title="Broker de Credite"></a>Broker de Credite</h2><p>Broker-ul m-a ajutat sa accesez intr-un timp scurt si fara prea multe <strong>batai de cap</strong>/<strong>drumuri la banca</strong> ofertele altor cateva banci de pe piata (lucru pe care il va face indiferent daca vei lua un credit prin el sau nu).</p><p>Tot el mi-a explicat in mare sistemul de scoring al bancilor si cum anume ar trebui sa raspund la diferite intrebari atunci cand voi aplica pentru credit. De exemplu daca stai in chirie (fara contract) la banca vei spune ca locuiesti cu parintii :). </p><p>Asadar recomand discutia cu un Broker de Credite.</p><h2 id="Apartamentul-amp-Agentia-Imobiliara"><a href="#Apartamentul-amp-Agentia-Imobiliara" class="headerlink" title="Apartamentul &amp; Agentia Imobiliara"></a>Apartamentul &amp; Agentia Imobiliara</h2><p>Dupa mai multe vizionari, apartamentul castigator a fost cel ofertat de agentia imobiliara <a href="https://www.facebook.com/axadomenii/" target="_blank" rel="noopener">Axa Domenii International</a>. Experienta cu Axa Domenii a fost una excelenta.</p><p>Din momentul in care am decis achizitionarea apartamentului pot spune ca agentia s-a ocupat de toate (atat pentru noi ca si cumparatori cat si pentru vanzator), inclusiv recomandare de ING Office (o recomandare foarte buna de altfel ce a dus la mutarea tuturor conturilor/operatiunilor in acest office).</p><p>Pe scurt, a fost exact ceea ce ne-am dorit, in seama noastra ramanand doar accesarea creditului. Fara dar si poate un agent imobiliar profesionist te va scuti de multe batai de cap.</p><p>Tot la recomandarea Axa Domenii International am mers la un anumit notar unde lucrurile au mers fara nicio problema. Semnare antecontract in prima faza, cu plata unei sume (parte din avans) proprietarului, stabilirea datei pana la care sa va finaliza tranzactia si a numarului de zile pentru eliberarea apartamentului de la data semnarii. <strong>Un antecontract securizeaza tranzactia!</strong></p><h2 id="Banca"><a href="#Banca" class="headerlink" title="Banca"></a>Banca</h2><p>Cu siguranta interesul tuturor agentiilor imobiliare este sa vanda. Nu pot vorbi despre alte agentii dar in cazul de fata agentia prin care am cumparat apartamentul ne-a recomandat inclusiv in ce ING Office sa mergem. Si nu mi-a parut rau deloc ba din contra, fiind pe picior de plecare din ING (alta discutie), dupa aceasta experienta, recomand cu incredere ING Bank.</p><p>Lucrurile au mers cum nu se puteau mai bine. Practic pentru achizitionarea apartamentului a fost nevoie de un singur drum la banca. In rest, actele necesare finalizarii tranzactiei au fost trimise electronic sau prin curier intre toti cei implicati (noi, banca, agentie/vanzator). Dupa indeplinirea conditiilor semnarea oficiala s-a facut la notar in prezenta reprezentatului ING la o data stabilita de comun acord (agentia s-a ocupat de acest aspect) cu toate partile implicate.</p><p><strong>Simplu si rapid!</strong></p><p>O luna si jumatate a durat intregul proces din momentul in care am luat legatura cu noul office ING pana la finalizarea tranzactiei. Sunt sigur ca ar fi putut dura chiar mai putin avand in vedere ca in acest interval am prins mai multe perioade libere (Craciun, Revelion, Mica Unire).</p>]]></content>
     
     <summary type="html">
     
@@ -71,35 +77,7 @@
     <published>2017-02-14T12:28:12.000Z</published>
     <updated>2017-02-14T16:36:14.773Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h2><p>For some time already I noticed the presence of this ghost or <0w#25> folder which is annoying. Anyway, fixing it is pretty easy.</0w#25></p>
-<p><img src="/content/images/0w-25-empty-folder-outlook-2016.png" alt="&lt;0w#25&gt; Folder"></p>
-<h2 id="Issue"><a href="#Issue" class="headerlink" title="Issue"></a>Issue</h2><p><0w#25> / Empty Folder</0w#25></p>
-<h2 id="About-the-System"><a href="#About-the-System" class="headerlink" title="About the System"></a>About the System</h2><ul>
-<li>Microsoft Windows 10 Pro</li>
-<li>Microsoft Outlook 2016</li>
-<li>Gmail Account (IMAP)</li>
-</ul>
-<h2 id="Didn’t-worked"><a href="#Didn’t-worked" class="headerlink" title="Didn’t worked"></a>Didn’t worked</h2><p>Few solutions I’ve found on Google.</p>
-<ul>
-<li>Disabling different addons (such as Kaspersky, Teamviewer, OneNote etc)</li>
-<li>Running <code>SCANPST.EXE</code> </li>
-<li>Running Outlook in Safe Mode</li>
-<li>Different freeware solutions</li>
-</ul>
-<h2 id="Worked"><a href="#Worked" class="headerlink" title="Worked"></a>Worked</h2><p>Renaming .ost file fixed the problem.</p>
-<ol>
-<li>Close Outlook</li>
-<li>Press <code>WIN + R</code></li>
-<li><p>Type or Copy/Paste </p>
-<figure class="highlight cmd"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">%HOMEDRIVE%</span><span class="variable">%HOMEPATH%</span>\AppData\Local\Microsoft\Outlook</div></pre></td></tr></table></figure>
-</li>
-<li><p>Make sure <code>File name extensions</code> is checked<br><img src="/content/images/view-file-name-extensions.png" alt="&lt;0w#25&gt; Folder"></p>
-</li>
-<li>Rename the <code>.ost</code> file in something else (ex. <code>.ost_</code>)</li>
-<li>Open Outlook (it will take longer than usual)</li>
-<li>Repeat the above if you have multiple accounts</li>
-</ol>
-]]></content>
+    <content type="html"><![CDATA[<h2 id="Intro"><a href="#Intro" class="headerlink" title="Intro"></a>Intro</h2><p>For some time already I noticed the presence of this ghost or <0w#25> folder which is annoying. Anyway, fixing it is pretty easy.</0w#25></p><p><img src="/content/images/0w-25-empty-folder-outlook-2016.png" alt="&lt;0w#25&gt; Folder"></p><h2 id="Issue"><a href="#Issue" class="headerlink" title="Issue"></a>Issue</h2><p><0w#25> / Empty Folder</0w#25></p><h2 id="About-the-System"><a href="#About-the-System" class="headerlink" title="About the System"></a>About the System</h2><ul><li>Microsoft Windows 10 Pro</li><li>Microsoft Outlook 2016</li><li>Gmail Account (IMAP)</li></ul><h2 id="Didn’t-worked"><a href="#Didn’t-worked" class="headerlink" title="Didn’t worked"></a>Didn’t worked</h2><p>Few solutions I’ve found on Google.</p><ul><li>Disabling different addons (such as Kaspersky, Teamviewer, OneNote etc)</li><li>Running <code>SCANPST.EXE</code> </li><li>Running Outlook in Safe Mode</li><li>Different freeware solutions</li></ul><h2 id="Worked"><a href="#Worked" class="headerlink" title="Worked"></a>Worked</h2><p>Renaming .ost file fixed the problem.</p><ol><li>Close Outlook</li><li>Press <code>WIN + R</code></li><li><p>Type or Copy/Paste </p><figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">%HOMEDRIVE%</span><span class="variable">%HOMEPATH%</span>\AppData\Local\Microsoft\Outlook</span><br></pre></td></tr></table></figure></li><li><p>Make sure <code>File name extensions</code> is checked<br><img src="/content/images/view-file-name-extensions.png" alt="&lt;0w#25&gt; Folder"></p></li><li>Rename the <code>.ost</code> file in something else (ex. <code>.ost_</code>)</li><li>Open Outlook (it will take longer than usual)</li><li>Repeat the above if you have multiple accounts</li></ol>]]></content>
     
     <summary type="html">
     
@@ -122,16 +100,18 @@
     <title>Hello World</title>
     <link href="http://rekwi.re/8dc98100-f21f-11e6-a1f9-3ff843d5641d/echo-hello-world/"/>
     <id>http://rekwi.re/8dc98100-f21f-11e6-a1f9-3ff843d5641d/echo-hello-world/</id>
-    <published>2017-02-13T21:02:45.873Z</published>
-    <updated>2017-02-13T21:02:45.828Z</updated>
+    <published>2017-02-13T19:02:45.000Z</published>
+    <updated>2018-02-11T20:50:11.702Z</updated>
     
-    <content type="html"><![CDATA[<p>Enjoy your stay.</p>
-]]></content>
+    <content type="html"><![CDATA[<p>Enjoy your stay.</p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;Enjoy your stay.&lt;/p&gt;
+      
+      
+        &lt;p&gt;Enjoy your stay.&lt;/p&gt;
 
+      
     
     </summary>
     
